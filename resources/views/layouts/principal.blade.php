@@ -57,6 +57,13 @@
         {!! Html::script('demo/js/other-charts.js') !!}
         {!! Html::script('demo/js/jqvmap.js') !!}
 
+        {!! Html::script('vendors/bower_components/datatables.net/js/jquery.dataTables.min.js') !!}
+        {!! Html::script('vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js') !!}
+        {!! Html::script('vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js') !!}
+        {!! Html::script('vendors/bower_components/jszip/dist/jszip.min.js') !!}
+        {!! Html::script('vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js') !!}
+
+
 
 
 
