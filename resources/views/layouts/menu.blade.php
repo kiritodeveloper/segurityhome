@@ -3,7 +3,7 @@
 
                     <div class="user">
                         <div class="user__info" data-toggle="dropdown">
-                            <img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+                            <img class="user__img" src="{{Auth::user()->foto}}" alt="">
                             <div>
                                 <div class="user__name">{{ Auth::user()->name}}</div>
                                 <div class="user__email">{{ Auth::user()->email}}</div>

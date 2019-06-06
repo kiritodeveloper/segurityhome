@@ -16,22 +16,17 @@
         {!! Html::style('css/app.min.css') !!}
 
     </head>
-
+     @section('menu')
+     @show
+    @section('bar_top')
+    @show
     <body data-sa-theme="1">
         <main class="main">
-            <div class="page-loader">
-                <div class="page-loader__spinner">
-                    <svg viewBox="25 25 50 50">
-                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                    </svg>
-                </div>
-            </div>
 
-
-
-    @yield('content')
+            @yield('content')
 
         </main>
+    </body>
         {!! Html::script('vendors/bower_components/jquery/dist/jquery.min.js') !!}
         {!! Html::script('vendors/bower_components/popper.js/dist/umd/popper.min.js') !!}
         {!! Html::script('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
@@ -70,6 +65,4 @@
         <!-- App functions and actions -->
 
         {!! Html::script('js/app.min.js') !!}
-
-    </body>
 </html>

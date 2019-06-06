@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -37,7 +37,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data =  $request->all();
+       
+        $new=new User($request->all());
+        $new['password'] = bcrypt($new['password']);
+        $new->save();
+
+        return redirect()->route('users.index');
     }
 
     /**

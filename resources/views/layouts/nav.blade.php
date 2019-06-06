@@ -22,30 +22,56 @@
 
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
                             <div class="row app-shortcuts">
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-calendar"></i>
-                                    <small class="">Calendar</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-file-text"></i>
-                                    <small class="">Files</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-email"></i>
-                                    <small class="">Email</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-trending-up"></i>
-                                    <small class="">Reports</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-view-headline"></i>
-                                    <small class="">News</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-image"></i>
-                                    <small class="">Gallery</small>
-                                </a>
+                              @if (Route::has('login'))
+                                        @auth
+                                            <a class="col-4 app-shortcuts__item" href="{{ url('/home') }}">
+                                            <i class="zmdi zmdi-home zmdi-hc-fw"></i>
+                                                <small class="">Principal</small>
+                                            </a>
+                                            <div class="col-4 app-shortcuts__item">
+                                                <a class="col-4 app-shortcuts__item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                <i class="zmdi zmdi-key"></i>
+                                                <small class="">salir</small>
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>   
+                                            </div>
+                                            <a class="col-4 app-shortcuts__item" href="">
+                                                <i class="zmdi zmdi-file-text"></i>
+                                                <small class="">Files</small>
+                                            </a>
+                                            <a class="col-4 app-shortcuts__item" href="">
+                                                <i class="zmdi zmdi-email"></i>
+                                                <small class="">Email</small>
+                                            </a>
+                                            <a class="col-4 app-shortcuts__item" href="">
+                                                <i class="zmdi zmdi-trending-up"></i>
+                                                <small class="">Reports</small>
+                                            </a>
+                                            <a class="col-4 app-shortcuts__item" href="">
+                                                <i class="zmdi zmdi-view-headline"></i>
+                                                <small class="">News</small>
+                                            </a>
+                                        @else
+                                            <a class="col-4 app-shortcuts__item" href="{{ route('login') }}">
+                                                <i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>
+                                                <small class="">Ingresar Al Sistema</small>
+                                            </a>
+                                            <a class="col-4 app-shortcuts__item" href="{{ route('login') }}">
+                                                <i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>
+                                                <small class="">Niños Encontrados</small>
+                                            </a>
+                                            <a class="col-4 app-shortcuts__item" href="{{ route('login') }}">
+                                                <i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>
+                                                <small class="">Mascotas Encontradas</small>
+                                            </a>
+                                        @endauth
+                                @endif
+                                
                             </div>
                         </div>
                     </li>

@@ -8,7 +8,7 @@
 <section class="content">
     <header class="content__title">
         <div class="actions">
-                <a href="" class="actions__item zmdi zmdi-account-add"></a>
+                <a href="{{route("users.create")}}" class="actions__item zmdi zmdi-account-add"></a>
             </div>
     </header>
     
